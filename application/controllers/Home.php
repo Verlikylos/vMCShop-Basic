@@ -97,7 +97,7 @@ class Home extends CI_Controller {
 
             $pp = $this->PaymentsModel->get(5);
             $pp = json_decode($pp['config'], true);
-            $bodyData['Paypal'] = $pp['adress'];
+            $bodyData['paypal'] = $pp['adress'];
 
             $this->load->view('Shop', $bodyData);
 
