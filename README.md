@@ -34,6 +34,9 @@ W razie jakichkolwiek pytań/wątpliwosci/problemów/błędów zapraszam do kont
 
 **Zanim napiszesz do mnie w związku z jakimś błędem, sprawdź czy [tutaj](https://github.com/Verlikylos/vMCShop/wiki/Znane-b%C5%82%C4%99dy-i-sposoby-ich-rozwi%C4%85zywania) nie ma opisu jak go rozwiazać!**
 
+### Donejtorzy
+- blackxxoj | 0.01 zł | Prestiż ( ͡° ͜ʖ ͡°)
+
 <br><br>
 
 ### Funkcje
