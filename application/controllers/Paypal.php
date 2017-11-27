@@ -125,7 +125,7 @@ class Paypal extends CI_Controller {
 
             $bodyData['purchases'] = $this->PurchasesModel->getBy('server', $bodyData['server']['id'], true);
             $servers = $this->ServersModel->getAll();
-            $services = $this->ServicesModel->getBy('server', $server['id']);
+            $services = $this->ServicesModel->getBy('server', $server['id'], true);
 
             foreach ($servers as $server) {
                 for ($i = 0; $i < count($services); $i++) {

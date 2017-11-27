@@ -36,6 +36,7 @@ class Home extends CI_Controller {
             $this->load->model('PurchasesModel');
             $this->load->model('PagesModel');
             $this->load->helper('smsnumbers_helper');
+            $this->load->library('form_validation');
 
             $bodyData['server'] = $servers[0];
 
