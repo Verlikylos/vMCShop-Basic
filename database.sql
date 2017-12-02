@@ -67,7 +67,7 @@ CREATE TABLE `vmcs_payments` (
 INSERT INTO `vmcs_payments` (`id`, `name`, `config`) VALUES
 (1, 'MicroSMS.pl', '{\"sms\":{\"userid\":\"0\",\"percentage\":0.45}}'),
 (2, 'Lvlup.pro', '{\"sms\":{\"userid\":\"0\",\"percentage\":0.45}}'),
-(3, 'Homepay.pl', '{\"sms\":{\"userid\":\01\",\"apikey\":\"none\",\"percentage\":0.45}}'),
+(3, 'Homepay.pl', '{\"sms\":{\"userid\":\"0\",\"apikey\":\"none\",\"percentage\":0.45}}'),
 (4, 'Pukawka.pl', '{\"sms\":{\"apikey\":\"none\",\"percentage\":0.45}}'),
 (5, 'PayPal', '{\"adress\":null}');
 
