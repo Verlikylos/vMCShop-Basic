@@ -25,9 +25,7 @@ function check($userid, $apikey, $serviceid, $code) {
 
         $result = curl_exec($ch);
         curl_close($ch);
-
-        var_dump($result);
-        exit();
+        
         $json = json_decode($result, true);
         if($json['code'] == "1")
             return array('value' => true, 'message' => 'Usługa została pomyślnie zrealizowana!');
