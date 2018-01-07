@@ -18,8 +18,6 @@ function check($userid, $serviceid, $service_number, $code) {
             return array('value' => false, 'message' => 'Nie można nawiazać połączenia z serwerem płatności! Spróbuj ponownie później.');
         }
 
-        $api = json_decode($api);
-
         if (!is_object($api)) {
             return array('value' => false, 'message' => 'Wystapił błąd podczas pobierania informacji z serwera płatności! Spróbuj ponownie później!');
         }
