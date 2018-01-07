@@ -8,9 +8,13 @@
 
 function check($userid, $serviceid, $service_number, $code) {
     if (preg_match("/^[A-Za-z0-9]{8}$/", $code)) {
-        $api = @file_get_contents("http://microsms.pl/api/v2/multi.php?userid=" . $userid . "&code=" . $code . '&serviceid=' . $serviceid);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FAILONERROR, true);
+        curl_setopt($ch, CURLOPT_URL, 'http://microsms.pl/api/v2/multi.php?userid=' . $userid . '&code=' . $code . '&serviceid=' . $serviceid);
+        $api = json_decode(curl_exec($ch), true);
 
-        if (!isset($api)) {
+        if (!isset(curl_error($ch))) {
             return array('value' => false, 'message' => 'Nie można nawiazać połączenia z serwerem płatności! Spróbuj ponownie później.');
         }
 
