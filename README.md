@@ -1,6 +1,6 @@
 ![vMCShop](https://host.verlikylos.pro/images/vMCShop-Basic-Github-Logo.png)
 
-Aktualna wersja: **1.0.0**
+Aktualna wersja: **1.0.1**
 
 [Instrukcja aktualizacji skryptu do najnowszej wersji](https://github.com/Verlikylos/vMCShop/wiki/Instrukcja-aktualizacji-skryptu-do-najnowszej-wersji)
 
