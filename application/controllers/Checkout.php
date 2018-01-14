@@ -122,7 +122,6 @@ class Checkout extends CI_Controller {
             }
 
             if (!$allow) {
-                $_SESSION['messageDanger'] = $smsOperator['name'];
                 redirect(base_url('shop/' . $serverName));
             }
 

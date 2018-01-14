@@ -369,5 +369,61 @@ class Edit extends CI_Controller {
             redirect(base_url('panel/services'));
         }
     }
+    
+    public function pageSave() {
+        if (!$this->session->userdata('logged')) redirect(base_url());
+    
+        $this->load->library('form_validation');
+    
+        $this->form_validation->set_rules('pageId', 'pageId', 'required|trim');
+        $this->form_validation->set_rules('pageTitle', 'pageTitle', 'required|trim');
+        $this->form_validation->set_rules('pageLink', 'pageLink', 'trim');
+        $this->form_validation->set_rules('pageIcon', 'pageIcon', 'trim');
+        $this->form_validation->set_rules('pageContent', 'pageContent', 'trim');
+    
+        if ($this->form_validation->run() === TRUE) {
+        
+            $this->load->model('PagesModel');
+        
+            $pageId = $this->input->post('pageId');
+            $data['title'] = $this->input->post('pageTitle');
+            $data['link'] = ($this->input->post('pageTitle') == null) ? null : $this->input->post('pageLink');
+            $data['icon'] = ($this->input->post('pageIcon') == null) ? null : $this->input->post('pageIcon');
+            $data['content'] = ($this->input->post('pageContent') == null) ? null : $this->input->post('pageContent');
+        
+            if (!preg_match("/^[a-zA-Z0-9 ]{1,255}[^\s]$/", $data['title'])) {
+                $_SESSION['messageDanger'] = "Nazwa strony zawiera niedozwolone znaki!";
+                redirect(base_url('panel/pages'));
+            }
+        
+            if ($data['link'] != null) {
+                $rm = "odnośnik";
+            } else {
+                $rm = "stronę";
+            }
+            $pageTitle = $data['title'];
+        
+            if (!$this->PagesModel->update($pageId, $data)) {
+                $_SESSION['messageDanger'] = "Wystąpił błąd podczas łączenia z bazą danych!";
+                redirect(base_url('panel/pages'));
+            }
+        
+            unset($data);
+        
+            $data['user'] = $_SESSION['name'];
+            $data['section'] = "Własne strony";
+            $data['details'] = "Użytkownik edytował <strong>" . $rm . "</strong> o nazwie <strong>" . $pageTitle . "</strong>.";
+            $data['date'] = time();
+        
+            $this->load->model('LogsModel');
+            $this->LogsModel->add($data);
+        
+            $_SESSION['messageSuccess'] = "Pomyślnie edytowano " . $rm . " o nazwie <strong>" . $pageTitle ."</strong>!";
+            redirect(base_url('panel/pages'));
+        } else {
+            $_SESSION['messageDanger'] = "Proszę wypełnić wszystkie pola formularza!";
+            redirect(base_url('panel/pages'));
+        }
+    }
 
 }

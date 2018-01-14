@@ -151,7 +151,7 @@ class Servers extends CI_Controller {
 
             $serverServices = $this->ServicesModel->getBy('server', $serverId, true);
 
-            if ($serverServices) {
+            if ($serverServices != null) {
 
                 $this->load->model('VouchersModel');
                 $serverVouchers = null;

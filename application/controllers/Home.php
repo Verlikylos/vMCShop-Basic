@@ -86,10 +86,12 @@ class Home extends CI_Controller {
                 if ($bodyData['services'][$i]['smsConfig'] != null) {
                     $bodyData['services'][$i]['smsConfig'] = json_decode($bodyData['services'][$i]['smsConfig'], true);
                 }
-                for ($x = 0; $x < count($bodyData['purchases']); $x++) {
-                    if ($bodyData['purchases'][$x]['service'] == $bodyData['services'][$i]['id']) {
-                        $bodyData['purchases'][$x]['service'] = $bodyData['services'][$i]['name'];
-                        $bodyData['purchases'][$x]['server'] = $bodyData['server']['name'];
+                if ($bodyData['purchases'] != null) {
+                    for ($x = 0; $x < count($bodyData['purchases']); $x++) {
+                        if ($bodyData['purchases'][$x]['service'] == $bodyData['services'][$i]['id']) {
+                            $bodyData['purchases'][$x]['service'] = $bodyData['services'][$i]['name'];
+                            $bodyData['purchases'][$x]['server'] = $bodyData['server']['name'];
+                        }
                     }
                 }
             }

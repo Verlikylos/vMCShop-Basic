@@ -100,10 +100,12 @@ class Shop extends CI_Controller {
                 for ($i = 0; $i < count($services); $i++) {
                     if ($services[$i]['server'] == $server['id']) {
                         $services[$i]['server'] = $server['name'];
-                        for ($x = 0; $x < count($bodyData['purchases']); $x++) {
-                            if ($bodyData['purchases'][$x]['service'] == $services[$i]['id']) {
-                                $bodyData['purchases'][$x]['service'] = $services[$i]['name'];
-                                $bodyData['purchases'][$x]['server'] = $server['name'];
+                        if ($bodyData['purchases'] != null) {
+                            for ($x = 0; $x < count($bodyData['purchases']); $x++) {
+                                if ($bodyData['purchases'][$x]['service'] == $services[$i]['id']) {
+                                    $bodyData['purchases'][$x]['service'] = $services[$i]['name'];
+                                    $bodyData['purchases'][$x]['server'] = $server['name'];
+                                }
                             }
                         }
                     }
