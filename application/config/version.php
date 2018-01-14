@@ -5,4 +5,4 @@
  * Copyright © vMCShop Basic 2017
  */
 
-$config['version'] = "1.0.0";
+$config['version'] = "1.0.1";

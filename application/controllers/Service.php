@@ -45,7 +45,7 @@ class Service extends CI_Controller {
 
             /**  Head Section  */
 
-            $headerData['page_title'] = $headerData['settings']['pageTitle'] . " | Ranga VIP ";
+            $headerData['page_title'] = $headerData['settings']['pageTitle'] . " | " . $bodyData['service']['name'];
 
             $this->load->view('components/Header', $headerData);
 

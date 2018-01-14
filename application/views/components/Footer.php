@@ -641,7 +641,7 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         <?php endif; ?>
-        <?php if ((($this->uri->rsegment('1') == "shop") || ($this->uri->rsegment('1') == "home")) && (count($servers) > 1)): ?>
+        <?php if ((($this->uri->rsegment('1') == "shop") || ($this->uri->rsegment('1') == "home")) && (!isset($servers))): ?>
         <div id="voucherModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
