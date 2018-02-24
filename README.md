@@ -1,5 +1,3 @@
-![vMCShop](https://host.verlikylos.pro/images/vMCShop-Basic-Github-Logo.png)
-
 Aktualna wersja: **1.0.1**
 
 [Instrukcja aktualizacji skryptu do najnowszej wersji](https://github.com/Verlikylos/vMCShop/wiki/Instrukcja-aktualizacji-skryptu-do-najnowszej-wersji)
@@ -30,12 +28,9 @@ Zapraszam do polubienia [FanPage](https://www.facebook.com/verlikylos), dzięki 
 
 ### Kontakt
 
-W razie jakichkolwiek pytań/wątpliwosci/problemów/błędów zapraszam do kontaktu [mailowego](mailto:kontakt@verlikylos.pro), przez mój [FanPage](https://www.facebook.com/verlikylos), Discord (Verlikylos#5640) lub przy pomocy komunikatora [Telegram](https://t.me/Verlikylos).
+W razie jakichkolwiek pytań/wątpliwosci/problemów/błędów zapraszam do kontaktu [mailowego](mailto:hello@verlikylos.net), przez mój [FanPage](https://www.facebook.com/verlikylos), Discord (Verlikylos#5640) lub przy pomocy komunikatora [Telegram](https://t.me/Verlikylos).
 
 **Zanim napiszesz do mnie w związku z jakimś błędem, sprawdź czy [tutaj](https://github.com/Verlikylos/vMCShop/wiki/Znane-b%C5%82%C4%99dy-i-sposoby-ich-rozwi%C4%85zywania) nie ma opisu jak go rozwiazać!**
-
-### Donejtorzy
-- blackxxoj | 0.01 zł | Prestiż ( ͡° ͜ʖ ͡°)
 
 <br><br>
 
@@ -86,7 +81,3 @@ Resztę można zobaczyć w demie ;)
  <br>
  
  ### Licencja: **GNU GPLv3**
- 
- <br>
- 
- [![Donate with PayPal](https://host.verlikylos.pro/images/paypal-donate.png)](https://www.paypal.me/Verlikylos)
