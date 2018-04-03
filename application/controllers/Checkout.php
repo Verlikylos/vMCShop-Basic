@@ -111,7 +111,7 @@ class Checkout extends CI_Controller {
                 $this->load->helper('payments/sms/pukawka_helper');
                 $this->load->helper('smsnumbers_helper');
 
-                $price = round(getPriceBrutto() * 0.53, 2);
+                $price = round(getPriceBrutto($service['smsConfig']['smsNumber'], $smsOperator['id']) * 0.53, 2);
                 $response = check($smsOperator['config']['sms']['apikey'], $price, $smsCode);
 
                 if (!$response['value']) {
