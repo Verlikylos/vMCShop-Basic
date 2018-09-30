@@ -77,7 +77,7 @@
 
                                 <?php else: ?>
                                     <?php foreach ($purchases as $purchase): ?>
-                                        <img class="img-fluid rounded mb-2 mr-1" src="https://cravatar.eu/avatar/<?php echo $purchase['buyer']; ?>/44" alt="<?php echo $purchase['buyer']; ?>'s avatar" data-toggle="tooltip" data-html="true" title="<strong><?php echo $purchase['buyer']; ?></strong><br /><?php echo $purchase['service']; ?>" />
+                                        <img class="img-fluid rounded mb-2 mr-1" src="https://minotar.net/helm/<?php echo $purchase['buyer']; ?>/44" alt="<?php echo $purchase['buyer']; ?>'s avatar" data-toggle="tooltip" data-html="true" title="<strong><?php echo $purchase['buyer']; ?></strong><br /><?php echo $purchase['service']; ?>" />
                                     <?php endforeach; ?>
                                 <?php endif; ?>
 
