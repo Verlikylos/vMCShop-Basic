@@ -14,29 +14,6 @@
 
             <div class="col-sm-12">
 
-                <?php if (!empty($apiMessages)): ?>
-
-                    <?php foreach ($apiMessages as $apiMessage): ?>
-
-                        <div class="card card-<?php echo $apiMessage['type']; ?> mb-3 mt-3 text-center" style="color: #ffffff;">
-                            <div class="card-block">
-                                <p class="mb-0">
-                                    <?php if (($apiMessage['type'] == "warning") || ($apiMessage['type'] == "danger")): ?>
-                                        <i class="fa fa-exclamation-triangle fa-2x float-left" aria-hidden="true"></i>
-                                    <?php elseif ($apiMessage['type'] == "info"): ?>
-                                        <i class="fa fa-info-circle fa-2x float-left" aria-hidden="true"></i>
-                                    <?php elseif ($apiMessage['type'] == "success"): ?>
-                                        <i class="fa fa-check fa-2x float-left" aria-hidden="true"></i>
-                                    <?php endif; ?>
-                                    <?php echo $apiMessage['message']; ?>
-                                </p>
-                            </div>
-                        </div>
-
-                    <?php endforeach; ?>
-
-                <?php endif; ?>
-
                 <ol class="breadcrumb" style="margin-top: 1em;">
                     <li class="breadcrumb-item"><a href="<?php echo base_url('panel/dashboard'); ?>">Admin Control Panel</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>

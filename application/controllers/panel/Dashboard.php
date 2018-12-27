@@ -42,41 +42,6 @@ class Dashboard extends CI_Controller {
 
         /**  Body Section  */
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_URL, 'https://api.verlikylos.pro/vmcshop-basic-bc.php');
-        $apiResult = json_decode(curl_exec($ch), true);
-        curl_close($ch);
-
-        $bodyData['apiMessages'] = array();
-
-        if ($apiResult != null) {
-            $i = 0;
-            $newest = null;
-
-            foreach ($apiResult as $item) {
-
-                if ($i == 0) {
-                    $newest = $item;
-                }
-
-                if (
-                    ($item['version'] == "all") ||
-                    (($newest['version'] != $this->config->item('version')) && ($item['version'] == "allOld")) ||
-                    ($item['version'] == $this->config->item('version'))
-                ) {
-                    $bodyData['apiMessages'] = array_merge($bodyData['apiMessages'], $item['data']);
-                    //$bodyData['apiMessages'] = $bodyData['apiMessages'] + $item['data'];
-                }
-
-                $i++;
-
-            }
-        } else {
-            $bodyData['apiMessages'] = array(array('type' => 'danger', 'message' => 'Wystąpił błąd podczas łączenia się z serwerem w celu pobrania informacji o Twojej wersji skryptu!'));
-        }
-
         $servers = $this->ServersModel->getAll();
         $bodyData['servers'] = array();
 
