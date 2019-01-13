@@ -32,7 +32,7 @@ function getPriceNetto($number, $smsOperator) {
 
 function getPriceBrutto($number, $smsOperator) {
     foreach (getSmsNumbers($smsOperator) as $numb => $cost) {
-        if ($numb == $number) return number_format(round(($cost + (0.23 * $cost)), 2), 2, ',', ' ');
+        if ($numb == $number) return number_format(round(($cost + (0.23 * $cost)), 2), 2, '.', ' ');
     }
     return null;
 }
