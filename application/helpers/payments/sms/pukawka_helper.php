@@ -6,19 +6,19 @@
  */
 
 function check($apikey, $pricebrutto, $code) {
-
-    $desc = "[vMCShop] Przychod z ItemShopu.";
+    
+    $desc = urlencode('[vMCShop] Przychod z ItemShopu.');
     $result = file_get_contents("https://admin.pukawka.pl/api/?keyapi=$apikey&type=sms&code=$code&desc=$desc");
-
+    
     if ($result) {
         $result = json_decode($result);
-
+        
         if (is_object($result)) {
-            if($result->error) {
+            if((property_exists($result, 'error')) || (!property_exists($result, 'status'))) {
                 return array('value' => false, 'message' => 'Wystąpił błąd podczas łączenia się z operatorem płatności!');
             } else {
                 $status = $result->status;
-
+                
                 if ($status=="ok") {
                     if ($pricebrutto != $result->kwota) {
                         return array('value' => false, 'message' => 'Niestety ten kod nie działa z tą usługą!');
