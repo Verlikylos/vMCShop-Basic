@@ -67,7 +67,11 @@ class Home extends CI_Controller {
                 }
                 $bodyData['server']['status']['onlinePlayers'] = $result['players']['online'];
                 $bodyData['server']['status']['maxPlayers'] = $result['players']['max'];
-                $bodyData['server']['status']['percent'] = round($bodyData['server']['status']['onlinePlayers'] / $bodyData['server']['status']['maxPlayers'] * 100, 0);
+                if (($bodyData['server']['status']['onlinePlayers'] == 0) || ($bodyData['server']['status']['maxPlayers'] == 0)) {
+                    $bodyData['server']['status']['percent'] = 0;
+                } else {
+                    $bodyData['server']['status']['percent'] = round($bodyData['server']['status']['onlinePlayers'] / $bodyData['server']['status']['maxPlayers'] * 100, 0);
+                }
                 
                 if ($bodyData['server']['status']['maxPlayers'] == 0) {
                     $bodyData['server']['status']['percent'] = 0;
